@@ -1,6 +1,6 @@
 # Choose Your Own Adventure with ReactJS
 
-# Demo:
+### Demo:
 
 [http://bryanmytko.github.io/](http://bryanmytko.github.io/)
 
