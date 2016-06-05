@@ -2,7 +2,7 @@
 
 ### Demo:
 
-[http://bryanmytko.github.io/](http://bryanmytko.github.io/)
+[http://cyoa.bryanmytko.com/](http://cyoa.bryanmytko.com/)
 
 ### Example application for learning React.
 
