@@ -23,7 +23,7 @@ module.exports = [
 
   {
     "id": 1,
-    "image": "https://intimacywithjesus.files.wordpress.com/2014/06/drowning-girl-sea-water-favim-com-112419.jpg",
+    "image": "http://i.imgur.com/Q1ZtbVl.jpg",
     "text": "As you step across the bridge you hear the ropes begin to snap. You try to dash to the other side but the bridge twists and the planks detach from under your feet. As you plummet into the cold, dark water below you hear a faint echo of laughter from the woods above.",
   },
 
