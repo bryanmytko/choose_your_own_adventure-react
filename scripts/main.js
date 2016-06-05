@@ -9,27 +9,75 @@ var History = ReactRouter.History;
 
 var createBrowserHistory = require("history/lib/createBrowserHistory");
 
+var adventures = require("./adventures");
+
 var App = React.createClass({
   getInitialState: function(){
     return {
-      adventures: {}
+      current_adventure: 0,
+      adventures: adventures
     }
   },
-  componentDidMount: function(){
-    // this.setState({
-    //   students: students
-    // });
+  changeAdventure: function(to){
+    this.setState({
+      current_adventure: to
+    });
   },
-  renderStudent: function(key){
-    //return <Adventure key={key} details={this.state.adventures[key]} />
+  resetGame: function(){
+    this.setState({
+      current_adventure: 0
+    });
+  },
+  showOptions: function(o){
+    var self = this;
+
+    if(o){
+      var choices = o.map(function(o){
+        return <Choice key={o.label} details={o} changeAdventure={self.changeAdventure} />
+      });
+
+      return choices;
+    } else {
+      return <Lose/>
+    }
   },
   render: function(){
+    var data = this.state.adventures[this.state.current_adventure];
+    var text = data.text.split("\n").map(function(el){
+              return(<p key={el}>{el}</p>);
+            });
+
     return(
-      <div className="main-container">
-        <h1>Choose Your Own Adventure</h1>
-        <div className="current-adventure"></div>
+      <div className="main-container" style={{ backgroundImage: 'url(' + data.image + ')' }}>
+        <nav>
+          <h1 onClick={this.resetGame}>
+            <span className="title">ReactJS</span> Choose Your Own Adventure
+          </h1>
+        </nav>
+        <div className="current-adventure">
+          {text}
+          <div className="choices">
+            {this.showOptions(data.options)}
+          </div>
+        </div>
       </div>
     )
+  }
+});
+
+var Choice = React.createClass({
+  onButtonClick: function(to){
+    this.props.changeAdventure(to);
+  },
+  render: function(){
+    var details = this.props.details;
+    return <a className="button" onClick={this.onButtonClick.bind(this, details.to)}>{details.label}</a>
+  }
+});
+
+var Lose = React.createClass({
+  render: function(){
+    return <p className="lose">You Lose</p>
   }
 });
 
