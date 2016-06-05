@@ -1,59 +1,101 @@
-body {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
   font-family: "Roboto", "Arial", sans-serif;
-  background: #68efad;
+  background: #f6f1ed;
+  height: 100%;
+  margin: 0;
+}
+
+/* #30231d */
+/* #6a5750 */
+/* #f6f1ed */
+/* #b5a397 */
+
+nav {
+  background: #30231d;
+  padding: 20px;
 }
 
 h1 {
-  font-family: "Viga", sans-serif;
-  color: #317051;
+  font-family: "Amatic SC", sans-serif;
+  color: #f6f1ed;
   font-size: 48px;
+  font-weight: 100;
+}
+
+h1 span.title {
+  color: #6a5750;
+  font-weight: bold;
 }
 
 .main-container {
-  width: 980px;
-  margin: 0 auto;
+  width: 100%;
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 50%;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
-.students-container {
+.current-adventure {
+  background: rgba(6, 6, 5, 0.41);
+  margin: 120px 0;
+  padding: 100px;
+}
+
+.current-adventure p {
+  margin: 20px auto;
+  width: 70%;
   color: #fff;
-}
-
-.student-container {
-  width: 300px;
-  background: #7a1ea1;
-  float: left;
-  margin-right: 20px;
-  margin-bottom: 20px;
-}
-
-.student-container img {
-  width: 300px;
-}
-
-.student-container .title {
-  padding: 40px 22px;
-  background: #691a99;
-  font-size: 28px;
-}
-
-.student-container .title a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.student-container .title a:hover {
-  opacity: .5;
-}
-
-.student-container .info {
-  font-family: "Helvetica", "Arial", sans-serif;
-  padding: 40px 22px;
+  font-size: 20px;
   font-weight: 100;
-  font-size: 15px;
-  line-height: 24px;
-  height: 180px;
+  font-family: "Courier", "Arial", sans-serif;
+  line-height: 1.5em;
 }
 
-.student-container .info span.label {
-  color: #E7C1FF;
+.current-adventure p.lose {
+  font-size: 60px;
+  color: #f00;
+  font-family: impact;
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
 }
+
+#main { height: 100%; }
+
+.choices {
+  margin: 40px auto 0 auto;
+  text-align: center;
+}
+
+.button {
+  margin: 12px;
+  color: #eff1ed;
+  text-decoration: none;
+  background: #548a5c;
+
+  display: inline-block;
+  padding: .375rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+}
+
