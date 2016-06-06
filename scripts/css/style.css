@@ -58,7 +58,7 @@ h1 span.title {
   line-height: 1.5em;
 }
 
-.current-adventure p.lose {
+.current-adventure p.red {
   font-size: 60px;
   color: #f00;
   font-family: impact;
