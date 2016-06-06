@@ -25,6 +25,10 @@ module.exports = [
     "id": 1,
     "image": "http://i.imgur.com/Q1ZtbVl.jpg",
     "text": "As you step across the bridge you hear the ropes begin to snap. You try to dash to the other side but the bridge twists and the planks detach from under your feet. As you plummet into the cold, dark water below you hear a faint echo of laughter from the woods above.",
+    "ending": {
+      "text": "You Lose",
+      "code": "red"
+    }
   },
 
 ];
