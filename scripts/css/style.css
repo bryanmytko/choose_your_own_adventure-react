@@ -25,6 +25,7 @@ h1 {
   color: #f6f1ed;
   font-size: 48px;
   font-weight: 100;
+  cursor: pointer;
 }
 
 h1 span.title {
@@ -69,6 +70,17 @@ h1 span.title {
   1px 1px 0 #000;
 }
 
+.current-adventure p.green {
+  font-size: 60px;
+  color: #0f0;
+  font-family: impact;
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+}
+
 #main { height: 100%; }
 
 .choices {
@@ -81,7 +93,7 @@ h1 span.title {
   color: #eff1ed;
   text-decoration: none;
   background: #548a5c;
-
+  cursor: pointer;
   display: inline-block;
   padding: .375rem 1rem;
   font-size: 1rem;
