@@ -28,17 +28,18 @@ var App = React.createClass({
       current_adventure: 0
     });
   },
-  showOptions: function(o){
+  showChoices: function(data){
     var self = this;
 
-    if(o){
-      var choices = o.map(function(o){
-        return <Choice key={o.label} details={o} changeAdventure={self.changeAdventure} />
+    if(data.options){
+      var choices = data.options.map(function(data){
+        return <Choice key={data.label} details={data}
+          changeAdventure={self.changeAdventure} />
       });
 
       return choices;
-    } else {
-      return <Lose/>
+    } else if(data.ending) {
+      return <Ending key={data.ending.code} ending={data.ending}/>
     }
   },
   render: function(){
@@ -48,7 +49,8 @@ var App = React.createClass({
             });
 
     return(
-      <div className="main-container" style={{ backgroundImage: 'url(' + data.image + ')' }}>
+      <div className="main-container"
+        style={{ backgroundImage: 'url(' + data.image + ')' }}>
         <nav>
           <h1 onClick={this.resetGame}>
             <span className="title">ReactJS</span> Choose Your Own Adventure
@@ -57,7 +59,7 @@ var App = React.createClass({
         <div className="current-adventure">
           {text}
           <div className="choices">
-            {this.showOptions(data.options)}
+            {this.showChoices(data)}
           </div>
         </div>
       </div>
@@ -71,13 +73,15 @@ var Choice = React.createClass({
   },
   render: function(){
     var details = this.props.details;
-    return <a className="button" onClick={this.onButtonClick.bind(this, details.to)}>{details.label}</a>
+    return <a className="button"
+      onClick={this.onButtonClick.bind(this, details.to)}>{details.label}</a>
   }
 });
 
-var Lose = React.createClass({
+var Ending = React.createClass({
   render: function(){
-    return <p className="lose">You Lose</p>
+    var ending = this.props.ending;
+    return <p className={ending.code}>{ending.text}</p>
   }
 });
 
