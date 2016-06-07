@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-require('./app/routes/core-routes.js')(app);
+require('./app/routes')(app);
 
 app.get('*', function(req, res) {
   res.json({
