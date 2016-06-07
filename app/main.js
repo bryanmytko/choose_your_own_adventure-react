@@ -85,10 +85,4 @@ var Ending = React.createClass({
   }
 });
 
-var routes = (
-  <Router history={createBrowserHistory()}>
-    <Route path="/" component={App}/>
-  </Router>
-);
-
-ReactDOM.render(routes, document.querySelector("#main"));
+React.render(routes, document.querySelector("#main"));
