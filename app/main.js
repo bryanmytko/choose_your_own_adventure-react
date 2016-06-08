@@ -6,8 +6,7 @@ var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 var Navigation = ReactRouter.Navigation;
 var History = ReactRouter.History;
-
-var createBrowserHistory = require("history/lib/createBrowserHistory");
+var BrowserHistory = ReactRouter.browserHistory;
 
 var adventures = require("./adventures");
 
@@ -85,4 +84,17 @@ var Ending = React.createClass({
   }
 });
 
-React.render(routes, document.querySelector("#main"));
+var NotFound = React.createClass({
+  render: function(){
+    return <p>404 - Not Found</p>
+  }
+});
+
+var routes = (
+  <Router history={BrowserHistory}>
+    <Route path="/" component={App}/>
+    <Route path="*" component={NotFound}/>
+  </Router>
+);
+
+ReactDOM.render(routes, document.querySelector("#main"));
