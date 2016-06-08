@@ -1,5 +1,5 @@
 var gulp = require('gulp'),
-    browserify = require('gulp-browserify');
+  browserify = require('gulp-browserify');
 
 gulp.task('scripts', function () {
 
