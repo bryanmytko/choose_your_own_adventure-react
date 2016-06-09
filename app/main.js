@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, Navigation, browserHistory } from 'react-router';
 
-var adventures = require("./adventures");
+import adventures from './adventures';
 
 var App = React.createClass({
   getInitialState: function(){
