@@ -1,12 +1,12 @@
 var gulp = require('gulp'),
-  browserify = require('gulp-browserify');
+    browserify = require('gulp-browserify'),
+    babel = require('babelify');
 
 gulp.task('scripts', function () {
-
   gulp.src(['app/main.js'])
     .pipe(browserify({
       debug: true,
-      transform: [ 'reactify' ]
+      transform: ['babelify', 'reactify']
     }))
     .pipe(gulp.dest('./public/'));
 
