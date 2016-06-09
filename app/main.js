@@ -1,12 +1,6 @@
-var React = require("react");
-var ReactDOM = require("react-dom");
-
-var ReactRouter = require("react-router");
-var Router = ReactRouter.Router;
-var Route = ReactRouter.Route;
-var Navigation = ReactRouter.Navigation;
-var History = ReactRouter.History;
-var BrowserHistory = ReactRouter.browserHistory;
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Router, Route, Navigation, browserHistory } from 'react-router';
 
 var adventures = require("./adventures");
 
@@ -91,7 +85,7 @@ var NotFound = React.createClass({
 });
 
 var routes = (
-  <Router history={BrowserHistory}>
+  <Router history={browserHistory}>
     <Route path="/" component={App}/>
     <Route path="*" component={NotFound}/>
   </Router>
