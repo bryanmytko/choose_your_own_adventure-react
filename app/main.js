@@ -37,9 +37,11 @@ var App = React.createClass({
   },
   render: function(){
     var data = this.state.adventures[this.state.current_adventure];
-    var text = data.text.split("\n").map(function(el){
-              return(<p key={el}>{el}</p>);
-            });
+    var text = data
+      .text.split("\n")
+      .map(function(el){
+        return <p key={el}>{el}</p>;
+      });
 
     return(
       <div className="main-container"
