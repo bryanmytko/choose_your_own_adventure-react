@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     babel = require('babelify');
 
 gulp.task('scripts', function () {
-  gulp.src(['app/main.js'])
+  gulp.src(['./app/app.js'])
     .pipe(browserify({
       debug: true,
       transform: ['babelify', 'reactify']
