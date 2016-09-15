@@ -5,8 +5,8 @@ module.exports = function(app){
 
   app.get('*', function(req, res) {
     /* @TODO Combine node & react routing to allow this */
-    res.json({
-      'route': '404 - Page Not Found'
-    });
+    // res.json({
+    //   route: '404 - Page Not Found'
+    // });
   });
 };
