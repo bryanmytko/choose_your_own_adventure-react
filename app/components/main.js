@@ -22,12 +22,10 @@ var App = React.createClass({
     });
   },
   showChoices: function(data){
-    var self = this;
-
     if(data.options){
-      var choices = data.options.map(function(data){
+      var choices = data.options.map(data => {
         return <Choice key={data.label} details={data}
-          changeAdventure={self.changeAdventure} />
+          changeAdventure={this.changeAdventure} />
       });
 
       return choices;
